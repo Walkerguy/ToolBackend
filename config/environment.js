@@ -1,5 +1,5 @@
 // Environment variabelen.
-var env = 
+var env =
 {
     webPort:        process.env.PORT || 3000,
     dbHost:         process.env.DB_HOST || 'localhost',
@@ -13,8 +13,9 @@ var dburl = process.env.NODE_ENV === 'production' ?
     'mongodb://' + env.dbUser + ':' + env.dbPassword + '@' + env.dbHost + ':' + env.dbPort + '/' + env.dbDatabase :
     'mongodb://localhost/' + env.dbDatabase
 
-module.exports = 
+module.exports =
 {
     env: env,
-    dburl: "mongodb://" + env.dbUser + ":" + env.dbPassword + "@ds029585.mlab.com:29585/mongodb_project"
+    dburl: 'mongodb://localhost/tooldb'
+    //"mongodb://" + env.dbUser + ":" + env.dbPassword + "@ds029585.mlab.com:29585/mongodb_project"
 };

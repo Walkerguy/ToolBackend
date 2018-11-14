@@ -3,7 +3,7 @@ var express       = require('express');
 var routes        = express.Router();
 
 // Models.
-var product   = require('../model/product.model');
+var Product   = require('../model/product.model');
 
 // Alle product ophalen via promise.
 routes.get('/all', function(req, res) {
@@ -25,11 +25,11 @@ routes.get('/:id', function(req, res) {
 routes.post('/create', function(req, res) {
   // Aanmaken.
   var product = new Product(req.body);
-
+  console.log(product);
   // Opslaan.
   product.save({})
     .then((product) => res.status(200).send(product))
-    .catch((error) => res.status(401).send(error));
+    .catch((error) => res.status(401).send( error));
 });
 
 // Bewerkt product.
