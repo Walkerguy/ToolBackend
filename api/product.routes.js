@@ -21,55 +21,6 @@ routes.get('/:id', function(req, res) {
     .catch((error) => res.status(401).send(error));
 });
 
-// Ratings van een product ophalen.
-routes.get('/:id/ratings', function(req, res) {
-  res.contentType('application/json');
-  Product.findById(req.params.id)
-      .populate('ratings')
-      .then((product) => {
-          ratings = product.ratings;
-          res.status(200).json(ratings);
-      })
-      .catch((error) => res.status(401).json(error));
-});
-
-// Ratings op Id ophalen.
-routes.get('/:id/ratings/:rid', function(req, res) {
-  res.contentType('application/json');
-  Product.findById(req.params.id)
-      .populate('ratings')
-      .then((product) => {
-          Rating.findById(req.params.rid)
-          .then((rating) => { 
-              res.status(200).json(rating);
-          })
-          .catch((error) => res.status(401).json(error));
-      })
-      .catch((error) => res.status(401).json(error));
-});
-
-/*// Nieuwe product, op basis van de request body.
-routes.post('/createm00v', function(req, res) {
-  var rating = new Rating({
-    source: 'Bram',
-    value: 'it sucked'
-  });
-  
-  rating.save(function (err) {
-    if (err) return handleError(err);
-  
-    var newmovie = new Product({
-      title: 'Casino Royale',
-      ratings: rating._id    // assign the _id from the person
-    });
-  
-    newmovie.save(function (err) {
-      if (err) return handleError(err);
-      // thats it!
-    });
-  });
-});*/
-
 // Nieuwe product, op basis van de request body.
 routes.post('/create', function(req, res) {
   // Aanmaken.
@@ -81,7 +32,7 @@ routes.post('/create', function(req, res) {
     .catch((error) => res.status(401).send(error));
 });
 
-/*// Bewerkt product.
+// Bewerkt product.
 routes.put('/edit/:id/', function(req, res) {
   // Vindt product, verandert atribuut, slaat op.
   Product.findById({
@@ -95,7 +46,7 @@ routes.put('/edit/:id/', function(req, res) {
       res.status(200).json(product);
     })
     .catch((error) => res.status(401).send(error));
-});*/
+});
 
 // Verwijder product.
 routes.delete('/delete/:id', function(req, res) {
