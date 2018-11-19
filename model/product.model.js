@@ -23,3 +23,11 @@ productImgUrl: {
 const Product = mongoose.model('product', ProductSchema);
 
 module.exports = Product;
+
+// const ProductSchema = new Schema({
+//   productName: String,
+//   productCategory: String,
+//   productDescription: String,
+//   productImgUrl: String
+//   }
+//   });
