@@ -26,6 +26,10 @@ describe('Updating a product',() => {
     assertName(product1.save(), done);
   });
 
+  // it('model instance can update', (done) => {
+  //     assertName(product1.updateOne({productName: 'Lord of the Rings online'}), done);
+  //   });
+
   it('A model class can update', (done) => {
     assertName(
       Product.update({ productName: 'Boortje' }, { productName: 'Zaagje'}),
