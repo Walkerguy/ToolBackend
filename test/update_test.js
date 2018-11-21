@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 const assert = require('assert');
 const Product = require('../model/product.model');
 
@@ -10,6 +9,7 @@ describe('Updating a product',() => {
      product1.save()
      .then(() => done());
   });
+
 
   function assertName(operation, done) {
     operation
@@ -47,29 +47,3 @@ describe('Updating a product',() => {
     );
   });
 });
-=======
-// const assert = require('assert');
-// const Product = require('../model/product.model');
-
-// describe('Updating records', () => {
-//     let product1;
-
-//     beforeEeach((done) => {
-//         product1 = new Product({productName: 'hamer', productCategorie:"gereedschappen", productImgUrl:"www.gfgf.nl",productDescription:"goed product"});
-//         product1.save()
-//         .then(() => done());
-//     });
-    
-//     it('instance type using set and save', () => {
-//         console.log(product1);
-//         hamer.set('productName', 'schroevendraaier');
-//         console.log(product1);
-//     });
-
-// });
- 
-
-// //     //     const product = new Product({productName: 'Hamer', productCategorie:"gereedschappen", productImgUrl:"www.gfgf.nl",productDescription:"goed product"});
-
-    
->>>>>>> Stashed changes

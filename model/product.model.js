@@ -16,7 +16,7 @@ productDescription: {
 },
 productImgUrl: {
   type: String,
-  required: [true,'the image of the product is missing, please enter a image.']
+  required: [true,'the image of the product is missing, please enter an image.']
 }
 });
 
@@ -31,3 +31,5 @@ module.exports = Product;
 //   productImgUrl: String
 //   }
 //   });
+
+// module.exports = Product;
