@@ -39,7 +39,12 @@ routes.put('/edit/:id/', function(req, res) {
       _id: req.params.id
     })
     .then((product) => {
-      product.data = req.params.data;
+      product.productName = req.body.productName,
+      product.productImgUrl = req.body.productImgUrl,
+      product.productCategorie = req.body.productCategorie,
+      product.productImgUrl = req.body.productImgUrl,
+      product.productDescription = req.body.productDescription
+      ;
       product.save({})
         .then((product) => res.status(200).send(product))
         .catch((error) => res.status(401).send(error));
