@@ -1,4 +1,5 @@
 const mongoose = require ('mongoose');
+
 mongoose.Promise = global.Promise;
 
 before((done) => {
@@ -11,7 +12,8 @@ before((done) => {
 });
 
 beforeEach((done) =>{
-  mongoose.connection.collections.products.drop(()=>{
-    done();
-  });
+  const {products} = mongoose.connection.collections;
+  products.drop()
+  .then(() => done())
+  .catch(() => done());
 });
