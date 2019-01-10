@@ -12,7 +12,7 @@ mongoose.Promise = global.Promise;
 app.use(cors());
 
 if(process.env.NODE_ENV !== 'test'){
-  mongoose.connect('mongodb://testuser:@Welkom1@ds251284.mlab.com:51284/products');
+  mongoose.connect('mongodb://testuser:Welkom1@ds251284.mlab.com:51284/products');
 };
 
 app.use(bodyParser.json());
