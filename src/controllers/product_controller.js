@@ -2,10 +2,12 @@ const Product = require('../model/product.model');
 
 module.exports = {
 
+  // To test if API responds.
   greeting(req,res){
     res.send({hi:'there'})
   },
 
+  // All CRUD functions.
   create(req,res,next){
     const productProps = req.body;
     Product.create(productProps)
@@ -29,6 +31,7 @@ module.exports = {
     .catch(next);
   },
 
+  // Read all or by ID.
   read(req,res,next){
     Product.find({})
     .then((product) => res.status(200).send(product))
@@ -41,5 +44,4 @@ module.exports = {
     .then((product) => res.status(200).send(product))
     .catch(next);
   }
-
 };

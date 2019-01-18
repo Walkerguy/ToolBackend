@@ -1,5 +1,5 @@
+// All product routes.
 const ProductsController = require ('../controllers/product_controller')
-
 
 module.exports = (app) => {
   app.get('/api', ProductsController.greeting);
