@@ -1,5 +1,8 @@
 // All product routes.
 const ProductsController = require ('../controllers/product_controller')
+const UserController = require ('../controllers/user_controller')
+
+var passport = require('passport');
 
 module.exports = (app) => {
   // USERS.
