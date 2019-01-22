@@ -1,7 +1,6 @@
 const Product = require('../model/product.model');
 
 module.exports = {
-
   // To test if API responds.
   greeting(req,res){
     res.send({hi:'there'})
