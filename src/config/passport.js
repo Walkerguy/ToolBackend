@@ -1,7 +1,7 @@
-const JwtStrategy = require('passport-jwt').Strategy, 
-      ExtractJwt = require('passport-jwt').ExtractJwt;
-const config = require('./environment');
-const User = require('../model/user.model');
+const JwtStrategy   = require('passport-jwt').Strategy, 
+      ExtractJwt    = require('passport-jwt').ExtractJwt;
+const config        = require('./environment');
+const User          = require('../model/user.model');
 
 // Implementing a passport library to handle tokens.
 module.exports = function(passport){
